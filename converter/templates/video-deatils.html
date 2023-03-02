@@ -1,0 +1,338 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="static/assets/img/book.png" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>YouTube Video Details</title>
+    <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="static/assets/css/style.css" rel="stylesheet">
+    <style>
+            
+	  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: white;
+      opacity: 1; /* Firefox */
+      }
+    </style>
+  </head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top " style="background:#6d35dc;">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a href="/Aione-Home">AI-ONE</a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto" href="/Aione-Home">Home</a></li>
+        <li><a class="nav-link scrollto" href="/aione-services">Services</a></li>
+        <li class="dropdown"><a href="#"><span>Free Tools</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="/YT-Video">YouTube Video Downloader</a></li>
+            <li><a href="/video2audio">YT Video to Audio Online</a></li>
+            <li><a href="/check-videodetails">Check YT video details</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link scrollto" href="//aione-contact-us">Contact Us</a></li>
+        <li><a class="nav-link scrollto" href="/aione-about-us">About Us</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+
+
+
+  <div class="container" id="top" >
+    <section class="about">
+      <div class="container" data-aos="fade-up">
+    
+        <div class="section-title">
+        <h2 style="margin-top:100px;text-align:center;">Enter YouTube Video link here</h2>
+      </div>
+
+      <div class="row">
+          <div class="left-content header-text" style="margin-top:50px;">
+            <form id="vdetails" class="search-form"  action="videodetails" method="POST">
+              {% csrf_token %}
+              <div class="form" style="text-align: center;">
+                <input type="details" name="details" id="details" style="margin: 0 0 1em;
+                border: none;
+                outline: none;
+                width: 90%;
+                /* padding: 17px; */
+                height: 50px;
+                border-radius: 10px;
+                padding: 8px;
+                background: #6d35dc;
+                color: white;
+            }"
+                 placeholder="Enter YouTube Video Link" autocomplete="on" required>
+              </div>
+                <button type="submit" style="    display: block;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 8px;
+                width: 30%;
+                border: none;
+                outline: none;
+                border-radius: 6px;
+                font-family: sans-serif;
+                font-size: 19px;
+                margin-top: 20px;
+                background: #6d35dc;
+                color:white;
+                " class="main-button" data-bs-toggle="modal" data-bs-target="#myModal">Get Video Details</button>
+            </form>             
+       
+          </div>
+        </div>
+      </div>
+	</section>
+</div>
+
+
+  <!-- ======= About Us Section ======= -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+
+      <div class="row content container">
+        <div class="section-title">
+          <h2 style="text-transform: capitalize;margin-top:50px;">YouTube Video Details</h2>
+        </div>
+        <div class="text1"> 
+         <p>
+          YouTube video details are the various pieces of information associated with a YouTube video, such as its title, description, tags, thumbnail, duration, view count, likes and dislikes, comments, and more. These details are important for both creators and viewers, as they help to identify, organize, and discover content on the platform.
+         </p>
+        </div>  
+        <div class="text1">
+          <p>
+            YouTube video details are created and managed by the video creator, who provides the necessary information during the uploading process. Let's take a closer look at each of the video details and how they are obtained.
+          </p> 
+        </div>  
+        <div class="text1">                
+          <p>
+            Title: The title of a YouTube video is the first thing viewers see and can be up to 100 characters long. It should be clear, concise, and descriptive, providing a good idea of what the video is about.
+          </p>    
+        </div>  
+        <div class="text1">
+          <p>
+            Description: The description of a YouTube video provides additional information that the title may not cover, including more detail about the video's content, links to related websites, social media profiles, and more. Creators can also use this space to include timestamps that help viewers jump to specific parts of the video.
+          </p> 
+        </div>  
+        <div class="text1">
+          <p>
+            Tags: Tags are keywords that are associated with a YouTube video to help it show up in relevant search results. Creators can add up to 500 characters worth of tags to their videos, using terms that describe the video's content, topic, and niche.
+          </p> 
+        </div>  
+        <div class="text1">
+          <p>
+            Thumbnail: The thumbnail is the image that viewers see before clicking on a video. Creators can choose from a selection of pre-made thumbnails or upload their own custom image. The thumbnail should be eye-catching, high-quality, and accurately represent the video's content.
+          </p> 
+        </div>  
+        <div class="text1">
+          <p>
+            Duration: The duration of a YouTube video is the length of time it takes to watch the entire video, measured in minutes and seconds. This information is automatically generated by YouTube when the video is uploaded.
+          </p> 
+        </div>  
+        <div class="text1">
+          <p>
+            View count: The view count of a YouTube video is the number of times the video has been viewed by users. This information is updated in real-time and is publicly available on the video's page.
+          </p> 
+        </div>  
+        <div class="text1">
+          <p>
+            Likes and dislikes: Likes and dislikes are a way for viewers to express their opinion about a YouTube video. Creators can see how many likes and dislikes a video has, as well as the percentage of viewers who liked or disliked the video.
+          </p> 
+        </div>  
+        <div class="text1">
+          <p>
+            Comments: Comments are a way for viewers to leave feedback, ask questions, or start a discussion about a YouTube video. Creators can respond to comments, and they can also disable comments if they choose.
+          </p> 
+        </div>  
+        <div class="text1">
+          <p>
+            Other video details that creators can provide include closed captions or subtitles, end screens, and annotations.
+
+So how does YouTube obtain all of this information? When a video is uploaded to YouTube, the creator provides the necessary details, and YouTube stores this information in a database. When a viewer searches for a video or clicks on a video thumbnail, YouTube retrieves the video's details from the database and displays them on the video's page.
+          </p> 
+        </div>  
+        <div class="text1">
+          <p>
+            YouTube also uses algorithms to analyze the video's content and metadata, such as the title, tags, and description, to determine which videos are relevant to a user's search query. This is how YouTube determines which videos to show in search results, recommended videos, and on the user's homepage.
+          </p> 
+        </div>  
+        <div class="text1">
+          <p>
+            In addition to the details provided by the video creator, YouTube also collects other data about the video, such as the time of day it was uploaded, the location of the viewer, and the device they are using to watch the video. This data is used to personalize the viewing experience and to provide more relevant content to the user.
+          </p> 
+        </div>  
+      </div>
+
+    </div>
+  </section><!-- End About Us Section -->
+
+
+
+    <!-- The Modal -->
+<div class="modal" id="myModal" >
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">YouTube Details</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Video</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Title</th>
+              <td id="vtitle"></td>
+            </tr>
+            <tr>
+              <th scope="row">Duration</th>
+              <td id="vlength"></td>
+            </tr>
+            <tr>
+              <th scope="row">Thumbnail Link</th>
+              <td id="vthumburl"></td>
+            </tr>
+          <tr>
+              <th scope="row">Description</th>
+              <td id="vdesc"></td>
+            </tr>
+            <tr>
+              <th scope="row">Views</th>
+              <td id="vviews"></td>
+            </tr>
+            {% comment %} <tr>
+              <th scope="row">Age Restricted</th>
+              <td id="vage"></td>
+            </tr> {% endcomment %}
+          <tr>
+              <th scope="row">Video ID</th>
+              <td id="vvid"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Modal footer -->
+    </div>
+  </div>
+</div>
+
+ <!-- ======= Footer ======= -->
+ <footer id="footer">
+
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+
+        <div class="col-lg-4 col-md-6 footer-links">
+          <h4>AIONE</h4>
+          <p style="font-family:'Poppins';font-size:15px;">AIONE is a Open-Ai website.We provide different tools which you need.Our mission is to assist you with answering your questions, providing information, and engaging in conversation.</p>
+        </div>
+
+
+        <div class="col-lg-4 col-md-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="/Aione-Home">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/aione-about-us">About us</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/aione-services">Services</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="">Terms of service</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="/YT-Video">YouTube Video Downloader</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/video2audio">Video 2 Audio Online</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="/Video-Details">Check Video Details</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer-bottom clearfix">
+    <div class="copyright">
+      Copyright &copy; 2022 <strong><span>AIONE</span></strong>. All Rights Reserved
+    </div>
+  </div>
+</footer><!-- End Footer -->
+
+
+							 <!-- Template Main JS File -->
+               <script src="static/assets/vendor/aos/aos.js"></script>
+               <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+               <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+               <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+               <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+               <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+               <script src="static/assets/vendor/php-email-form/validate.js"></script>
+             
+               <!-- Template Main JS File -->
+               <script src="static/assets/js/main.js"></script>
+               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+ </body>    
+<script type="text/javascript">
+  $(document).on('submit','#vdetails',function(e){
+      e.preventDefault();  
+      $.ajax({
+        type:'POST',
+        url: '/videodetails',
+        data: {
+          details:$('#details').val(),
+          csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+        }, 
+        success: function(data){    
+          $('#vtitle').html(data.vtitle)      
+          $('#vlength').html(data.vlength + " Seconds")      
+          $('#vthumburl').html(data.vthumburl)      
+          $('#vdesc').html(data.vdesc)      
+          $('#vviews').html(data.vviews)      
+          $('#vage').html(data.vage)      
+          $('#vvid').html(data.vvid)      
+        }
+      });
+    });
+  </script>
+</html>

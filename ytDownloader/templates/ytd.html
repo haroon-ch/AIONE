@@ -1,0 +1,109 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+
+
+<div class="container">
+	<section class="about">
+		<div class="container" data-aos="fade-up">
+	
+		  <div class="section-title">
+			<h2>Enter YouTube Video link here</h2>
+		</div>
+
+		{% if error %}
+		<div class="alert alert-danger" style="
+		width: 50%;
+		align-items: center;
+		margin-left: auto;
+		margin-right: auto;
+	}">
+			Please Check Your Video Url
+		</div>
+		{% endif %}
+
+		<div>
+			<form action="download/" class="search-form" method="get">
+				<div class="form" style="text-align: center;">
+					<input type="text" id="link" name="url" placeholder="Enter Link" required>
+				</div>
+
+
+				<button type="submit">Confirm</button>
+			</form>
+		</div>
+	
+	
+		</div>
+	</section>
+</div>
+
+      <!-- ======= About Us Section ======= -->
+	  <section class="about">
+		<div class="container" data-aos="fade-up">
+  
+  
+		  <div class="row content container">
+			<div class="section-title">
+				<h2 style="text-align:left;text-transform: capitalize;margin-bottom:0px;">What is a YouTube Video Downloader</h2>
+			  </div>
+			<div class="text1"> 
+			 <p>
+				A YouTube video downloader is a tool that allows users to download YouTube videos for offline viewing. It is a software application or online tool that can be used to save YouTube videos to a computer or mobile device. There are many YouTube video downloaders available online, both free and paid.
+			 </p>
+			</div>  
+			<div class="section-title">
+				<h2 style="text-align:left;text-transform: capitalize;margin-bottom:0px;">How to Use a YouTube Video Downloader</h2>
+			  </div>
+			<div class="text1">
+			  <p>
+				Step 1: Copy the YouTube video link
+				Open the YouTube video you want to download and copy the URL link from the address bar.
+			  </p> 
+			</div>  
+			<div class="text1">                
+			  <p>
+				Step 2: Paste the link into the downloader
+				Open the YouTube video downloader and paste the copied link into the designated field.
+			  </p>    
+			</div>  
+			<div class="text1">
+			  <p>
+				Step 3: Select the format and quality
+				Choose the format and quality in which you want to download the video.
+			  </p> 
+			</div>  
+			<div class="text1">
+			  <p>
+				Step 4: Start the download
+				Click on the download button to start the download process. Once the download is complete, the video will be saved to your computer or mobile device.
+			  </p> 
+			</div>  
+			<div class="section-title">
+				<h2 style="text-align:left;text-transform: capitalize;margin-bottom:0px;">Benefits of using a YouTube Video Downloader</h2>
+			  </div>
+			<div class="text1">                
+			  <p>
+				Convenient: With a YouTube video downloader, you can save your favorite videos and watch them at any time and from any location.
+			  </p>
+			</div>  
+			<div class="text1">               
+			  <p>
+				Higher Quality: Some YouTube video downloaders allow you to download videos in higher quality than what is available online.
+			  </p>
+			</div>  
+			<div class="text1">
+			  <p>
+				Ad-Free: When you download a video using a YouTube video downloader, you can watch it without any ads.
+			  </p>
+			</div>  
+		  </div>
+  
+		</div>
+	  </section><!-- End About Us Section -->
+
+		
+
+{% endblock %}

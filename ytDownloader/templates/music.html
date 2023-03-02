@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+		<div class="heading">
+			Single Music
+		</div>
+		
+		<form action="/download-music/" class="search-form" method="get">
+			<div class="form">
+				<!--<label for="link">Enter Link</label>-->
+				<input type="text" id="link" name="url"  placeholder="Enter YouTube Video Link" autocomplete="on" required  style="margin: 0 0 1em;
+                border: none;
+                outline: none;
+                width: 90%;
+                /* padding: 17px; */
+                height: 50px;
+                border-radius: 10px;
+                padding: 8px;
+                background: #6d35dc;
+                color: white;
+            }">
+			</div>
+			<button type="submit"  style="    display: block;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 8px;
+			width: 30%;
+			border: none;
+			border-radius: 6px;
+			font-family: sans-serif;
+			font-size: 19px;
+			margin-top: 20px;
+			background: #6d35dc;
+			color:white;
+			">Enter</button>
+		</form>
+
+		
+
+{% endblock %}

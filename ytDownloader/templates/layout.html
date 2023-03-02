@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>YT Video Download</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{% static 'styles.css' %}?{% now "U" %}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		  <!-- Favicons -->
+		  <link href="static/book.png" rel="icon">
+		  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+		  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	</head>
+	<body class="home-page">
+	  <!-- ======= Header ======= -->
+	  <header id="header" class="fixed-top ">
+		<div class="container d-flex align-items-center">
+	
+		  <h1 class="logo me-auto"><a href="i">AI-ONE</a></h1>
+		  <nav class="navbar">
+			<ul>
+			  <li><a class="nav-link scrollto" href="/">Home</a></li>
+			  <li><a class="nav-link scrollto" href="#">Services</a></li>
+			  <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
+			  <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+			</ul>
+			<a class="nav-link scrollto" href="#">Services</a>
+		  </nav><!-- .navbar -->
+	
+		</div>
+	  </header><!-- End Header -->
+	
+
+		{% block content %}
+		{% endblock %}
+
+		  <!-- ======= Footer ======= -->
+		  <footer id="footer">
+
+		
+			<div class="footer-top">
+			  <div class="container">
+				<div class="row">
+		
+		
+				  <div class="col-lg-4 col-md-6 footer-links">
+					<h4>AIONE</h4>
+					<p style="font-family:sans-serif;font-size:15px;">AIONE is a Open-Ai website.We provide different tools which you need.Our mission is to assist you with answering your questions, providing information, and engaging in conversation.</p>
+				  </div>
+		
+		
+				  <div class="col-lg-4 col-md-6 footer-links">
+					<h4>Quick Links</h4>
+					<ul>
+					  <li> <a href="/Aione-Home" style="font-family:sans-serif;">Home</a></li>
+					  <li> <a href="/aione-about-us"  style="font-family:sans-serif"> About us</a></li>
+					  <li> <a href="/aione-services" style="font-family:sans-serif;">Services</a></li>
+					  <li> <a href="#" style="font-family:sans-serif;">Terms of service</a></li>
+					  <li> <a href="#" style="font-family:sans-serif;">Privacy policy</a></li>
+					</ul>
+				  </div>
+		
+				  <div class="col-lg-4 col-md-6 footer-links">
+					<h4>Our Services</h4>
+					<ul>
+					  <li> <a href="/YT-Video" style="font-family:sans-serif;">YouTube Video Downloader</a></li>
+					  <li> <a href="/video2audio" style="font-family:sans-serif;">Video 2 Audio Online</a></li>
+					  <li> <a href="/Video-Details" style="font-family:sans-serif;">Check Video Details</a></li>
+					</ul>
+				  </div>
+		
+				</div>
+			  </div>
+			</div>
+		
+			<div class="container footer-bottom clearfix">
+			  <div class="copyright" style="font-family:sans-serif;">
+				Copyright &copy; 2022 <strong><span>AIONE</span></strong>. All Rights Reserved
+			  </div>
+			</div>
+		  </footer><!-- End Footer -->
+		
+
+
+
+		</body>

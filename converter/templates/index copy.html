@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>YouTube Video to MP3 Converter</title>
+
+    <!-- Bootstrap core CSS -->
+    {% comment %} <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"> {% endcomment %}
+
+    <!-- Additional CSS Files -->
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-space-dynamic.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'assets/css/animated.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}"> {% endcomment %}
+    <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="static/assets/css/style.css" rel="stylesheet">
+
+  </head>
+
+<body>
+
+  <header id="header" class="fixed-top " style="background: #6d35dc;">
+    <div class="container d-flex align-items-center">
+  
+      <h1 class="logo me-auto"><a href="index.html">AI-ONE</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  
+      <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto" href="#">Home</a></li>
+        <li><a class="nav-link scrollto" href="#">Services</a></li>
+        <li class="dropdown"><a href="#"><span>Free Tools</span> <i class="bi bi-chevron-down"></i></a>
+        <ul>
+          <li><a href="#">YouTube Video Downloader</a></li>
+          <li><a href="#">YT Video to Audio Online</a></li>
+          <li><a href="#">Video to Audio</a></li>
+        </ul>
+        </li>
+        <li><a class="nav-link scrollto" href="#contact">Contact Us</a></li>
+        <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+  
+    </div>
+    </header><!-- End Header -->
+  
+
+    
+
+  <div class="main-banner wow fadeIn" id="top" >
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content header-text wow fadeInLeft" >
+                <h6>Welcome to ABC.com</h6>
+                <h2>We convert <em>YouTube Videos</em> <span>To</span> MP3</h2>
+                <p>Convert video files to highest quality MP3 or download as MP4 in a single click and get the video details.<a rel="nofollow" href="#" target="_parent"> Try it Now!</a>.</p>
+                <form id="search" action="downloadmp3" method="POST">
+                  {% csrf_token %}
+                  <fieldset>
+                    <input type="address" name="address" class="email" placeholder="YouTube Video URL..." autocomplete="on" required>
+                  </fieldset>
+                  <fieldset>
+                    <button type="submit" class="main-button">Convert to MP3</button>
+                  </fieldset>
+                </form>
+                <form id="searchmp4" action="downloadmp4" method="POST">
+                  {% csrf_token %}
+                  <fieldset>
+                    <input type="addressmp4" name="addressmp4" class="email" placeholder="YouTube Video URL..." autocomplete="on" required>
+                  </fieldset>
+                  <fieldset>
+                    <button type="submit" class="main-button">Convert to MP4</button>
+                  </fieldset>
+                </form>   
+                <form id="vdetails" action="videodetails" method="POST">
+                  {% csrf_token %}
+                  <fieldset>
+                    <input type="details" name="details" id="details" class="email" placeholder="YouTube Video URL..." autocomplete="on" required>
+                  </fieldset>
+                  <fieldset>
+                    <button type="submit" class="main-button" data-bs-toggle="modal" data-bs-target="#myModal">Get Video Details</button>
+                  </fieldset>
+                </form>             
+           
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" >
+                <img src="{% static 'assets/images/banner-right-image.png' %}" alt="youtube video to mp3">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <!-- The Modal -->
+<div class="modal" id="myModal" >
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">YouTube Details</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Video</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Title</th>
+              <td id="vtitle"></td>
+            </tr>
+            <tr>
+              <th scope="row">Duration</th>
+              <td id="vlength"></td>
+            </tr>
+            <tr>
+              <th scope="row">Thumbnail Link</th>
+              <td id="vthumburl"></td>
+            </tr>
+          <tr>
+              <th scope="row">Description</th>
+              <td id="vdesc"></td>
+            </tr>
+            <tr>
+              <th scope="row">Views</th>
+              <td id="vviews"></td>
+            </tr>
+            <tr>
+              <th scope="row">Age Restricted</th>
+              <td id="vage"></td>
+            </tr>
+          <tr>
+              <th scope="row">Video ID</th>
+              <td id="vvid"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+							 <!-- Template Main JS File -->
+               <script src="static/assets/vendor/aos/aos.js"></script>
+               <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+               <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+               <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+               <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+               <script src="static/assets/vendor/waypoints/noframework.waypoints.js"></script>
+               <script src="static/assets/vendor/php-email-form/validate.js"></script>
+             
+               <!-- Template Main JS File -->
+               <script src="static/assets/js/main.js"></script>
+               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+ </body>    
+<script type="text/javascript">
+  $(document).on('submit','#vdetails',function(e){
+      e.preventDefault();  
+      $.ajax({
+        type:'POST',
+        url: '/videodetails',
+        data: {
+          details:$('#details').val(),
+          csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+        }, 
+        success: function(data){    
+          $('#vtitle').html(data.vtitle)      
+          $('#vlength').html(data.vlength + " Seconds")      
+          $('#vthumburl').html(data.vthumburl)      
+          $('#vdesc').html(data.vdesc)      
+          $('#vviews').html(data.vviews)      
+          $('#vage').html(data.vage)      
+          $('#vvid').html(data.vvid)      
+        }
+      });
+    });
+  </script>
+</html>
