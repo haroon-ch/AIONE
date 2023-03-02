@@ -5,8 +5,6 @@ from ytDownloader import views as yt_v
 from aione import views as aione_v
 from converter import views as co_v
 
-from django.views.static import serve
-from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,8 +27,5 @@ urlpatterns = [
     path('', include('ytDownloader.urls')),
     path('', include('converter.urls')),
     # path('', include('doinf.urls')),
-    
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
 
